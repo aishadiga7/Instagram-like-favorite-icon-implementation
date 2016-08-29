@@ -30,15 +30,16 @@ public class MainActivity extends AppCompatActivity implements AnimationStopList
         greyFavIcon = (ImageView) findViewById(R.id.heart);
         circleBackground = findViewById(R.id.circleBg);
         detector = new GestureDetector(this, new GestureListener());
-        greyFavIcon.setOnTouchListener(new View.OnTouchListener() {
+        final View.OnTouchListener l = new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 return detector.onTouchEvent(event);
             }
 
-        });
+        };
+        greyFavIcon.setOnTouchListener(l);
+        orangeFavIcon.setOnTouchListener(l);
     }
-
 
 
     @Override
@@ -53,19 +54,13 @@ public class MainActivity extends AppCompatActivity implements AnimationStopList
         }
 
 
-
         @Override
         public boolean onSingleTapConfirmed(MotionEvent e) {
             if (greyFavIcon.getVisibility() == View.GONE) {
-                greyFavIcon.setVisibility(View.VISIBLE);
-                orangeFavIcon.setVisibility(View.GONE);
-                circleBackground.setVisibility(View.GONE);
-                AnimationUtils.heart(circleBackground, greyFavIcon, orangeFavIcon);
-
+                AnimationUtils.heart(circleBackground, orangeFavIcon, greyFavIcon);
             } else {
                 AnimationUtils.heart(circleBackground, greyFavIcon, orangeFavIcon);
             }
-
             return true;
         }
     }
