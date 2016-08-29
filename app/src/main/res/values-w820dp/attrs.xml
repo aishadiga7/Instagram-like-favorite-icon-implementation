@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  Copyright © 2015, Kotak Mahindra Bank
+  ~  Written under contract by Robosoft Technologies Pvt. Ltd.
+  ~  */
+  -->
+
+<resources>
+    <declare-styleable name="CustomSpinnerAttrs">
+        <attr name="hintText" format="string"/>
+        <attr name="hintTextSize" format="integer"/>
+        <attr name="itemTextSize" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="BottomActionButtonAttrs">
+        <attr name="num_of_buttons" format="integer"/>
+        <attr name="has_divider_line" format="boolean"/>
+        <attr name="button_titles" format="reference"/>
+        <attr name="button_icons" format="reference"/>
+        <attr name="button_width" format="dimension"/>
+    </declare-styleable>
+</resources>
